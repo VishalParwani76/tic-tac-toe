@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url('assets/images/bg.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 15, 30, 0.72);
+    z-index: 0;
+}
+
+nav, main {
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #00e5ff;
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 3rem;
+    gap: 1.5rem;
+}
+
+.heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.infoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: min(500px, 90vw);
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 229, 255, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.infoContainer:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.1);
+}
+
+.infoContainer ul {
+    list-style: none;
+}
+
+.info {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff4757, #ff6b35);
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.35);
+    min-width: 110px;
+    cursor: default;
+}
+
+.scoreCounter {
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    min-width: 80px;
+}
+
+.soundControls {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    list-style: none;
+}
+
+.sound, .music, .restart {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.sound:hover, .music:hover, .restart:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.sound:active, .music:active, .restart:active {
+    transform: scale(0.92);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, min(22vw, 130px));
+    grid-template-columns: repeat(3, min(22vw, 130px));
+    font-family: 'Orbitron', sans-serif;
+}
+
+.box {
+    border: 2px solid rgba(0, 229, 255, 0.25);
+    font-size: min(16vw, 90px);
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+    color: white;
+}
+
+.box:hover {
+    background: rgba(0, 229, 255, 0.07);
+    box-shadow: inset 0 0 20px rgba(0, 229, 255, 0.08);
+}
+
+.box:active {
+    background: rgba(0, 229, 255, 0.14);
+}
+
+.bt-0 { border-top: 0; }
+.bb-0 { border-bottom: 0; }
+.br-0 { border-right: 0; }
+.bl-0 { border-left: 0; }
+
+
+.win-x {
+    background: rgba(255, 71, 87, 0.15);
+    color: #ff4757;
+    box-shadow: inset 0 0 25px rgba(255, 71, 87, 0.2);
+    transition: all 0.3s ease;
+}
+
+.win-o {
+    background: rgba(0, 229, 255, 0.15);
+    color: #00e5ff;
+    box-shadow: inset 0 0 25px rgba(0, 229, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.red { color: #ff4757; font-weight: 600; }
+.blue { color: #00e5ff; font-weight: 600; }
+
+.reset {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: white;
+    background: transparent;
+    border: 2px solid rgba(0, 229, 255, 0.5);
+    border-radius: 10px;
+    padding: 0.75rem 3rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.reset:hover {
+    background: rgba(0, 229, 255, 0.1);
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.reset:active {
+    background: rgba(0, 229, 255, 0.2);
+    transform: scale(0.97);
+}
+
+@media screen and (max-width: 500px) {
+    nav ul li { font-size: 0.9rem; }
+    .heading { font-size: 1.3rem; }
+    .infoContainer { flex-wrap: wrap; justify-content: center; }
+}
