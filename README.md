@@ -4,7 +4,7 @@ A modern and responsive Tic-Tac-Toe game built with HTML, CSS, and JavaScript.
 
 ## Live Demo
 
-🔗 https://your-netlify-site.netlify.app
+🔗 https://gridduel.netlify.app
 
 ## Preview
 
